@@ -21,34 +21,37 @@ header {
 header p {
     text-align: center;
     color: var(--light);
-}*/
+}
 
-.code {
-    padding: 10px;
-    /*display: flex;
+main {
+    display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
-    flex-wrap: wrap;*/
-    justify-content: space-between;
+    justify-content:center;
+}
+
+section {
+    flex: 0 0 375px;
+    margin: 30px;
+    border-width: 2px;
+    border-style: dashed;
+    border-color: var(--light);
 }
   
 .card {
-    border-width: 2px;
-    border-color: var(--light);
-    border-style: dashed;
-    padding: 10px;
-    flex: 0 0 200px;
-    margin: 10px;
+    padding: 0 30px 30px 30px;
 }
   
 .card-header {
     border-style: solid;
     border-color: var(--light);
+    color: var(--headtext);
     position: relative;
     margin-top: -20px;
 }
 
 .card > p {
-    text-align: center;
+    text-align: left;
 }
 
 pre {
