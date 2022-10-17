@@ -1,16 +1,15 @@
 :root {
     /* declare a variable with `--` syntax */
-    --dark: #13293d;
-    --light: #fff;
+    --headtext: #aed3f8;
+    --light: rgb(255, 255, 255);
+}
+
+* {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 }
 
 body {
-    font-size: 16px;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: flex-start;
-    background-color:dimgrey;
+    background-color: #4a5158;
 }
 
 h1 {
@@ -21,32 +20,40 @@ h1 {
 header {
     padding: 40px;
     text-align: center;
-    background-color: var(--dark);
-    color: var(--light);
+    color: var(--headtext);
 }
 
+.h1 p {
+   color: var(--light);
+}
 
-.code  {
-    flex: 1;
-    background-color: var(--light);
-    padding: 50px;
-    display: flex;
-    flex-wrap: wrap;
+.grid-container {
+    display: grid;
+    gap: 30px;
     justify-content: space-evenly;
+
+}
+
+.code {
+    padding: 10px;
+    /*display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;*/
+    justify-content: space-between;
 }
   
 .card {
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 50px;
+    border-width: 2px;
+    border-color: var(--light);
+    border-style: dashed;
     padding: 10px;
-    flex: 0 0 300px;
-    transform: rotate(8deg);
-    box-shadow: 10px 10px 5px #aaaaaa;
-    margin: 20px;
+    flex: 0 0 200px;
+    margin: 10px;
 }
   
 .card-header {
+    border-style: solid;
+    border-color: var(--light);
     position: relative;
     margin-top: -20px;
 }
@@ -71,6 +78,11 @@ pre {
     box-shadow: inset 0px 0px 8px
 rgba(232, 102, 236, 1), 0 0 15px
 rgba(232, 102, 235, 1);
+}
+
+footer {
+    justify-content: flex-end;
+    text-align: center;
 }
 
 /* Changes the width of the cards so they split into two columns at 992px or smaller*/
