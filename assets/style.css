@@ -25,7 +25,7 @@ header {
     color: var(--light);
   }
 
-.snippets {
+.code  {
     flex: 1;
     background-color: var(--light);
     padding: 50px;
@@ -53,6 +53,12 @@ header {
 .card > p {
     text-align: center;
   }
+
+pre {
+    font-size: .7rem;
+    margin: 0;
+    font-family: monospace;
+}
 /* Changes the width of the cards so they split into two columns at 992px or smaller*/
 /* Credit: https://www.w3schools.com/css/css3_mediaqueries_ex.asp*/
 @media screen and (max-width: 992px) {
