@@ -74,8 +74,8 @@ header p {
 
 
 pre {
-    position:;
-    font-size: .8em;
+    white-space: pre-line;
+    font-size: 1em;
     color: var(--light);
     border-radius: 8px;
     background-image: var(--linear-gradient);
