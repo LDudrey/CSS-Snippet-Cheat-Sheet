@@ -1,27 +1,23 @@
 :root {
     /* declare a variable with `--` syntax */
-    --headtext: #aed3f8;
+    --headtext: rgb(179, 218, 255);
+    --background: #4a5158;
     --light: rgb(255, 255, 255);
     --linear-gradient: linear-gradient(
-        rgba(232, 102, 236, 0.3) 0%,
-        rgba(232, 102, 236, 0.6) 100%
+        rgba(102, 171, 236, 0.3) 0%,
+        rgba(102, 171, 236, 0.6) 100%
         );
 }
 
 * {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
-/*.linear-gradient-background {
-    background-image: linear-
-gradient(
-    rgba(232, 102, 236, 0.3) 0%,
-    rgba(232, 102, 236, 0.6) 100%
-    );
-}*/
-
 body {
-    background-color: #4a5158;
+    background-color: var(--background);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 }
 
 header {
@@ -35,74 +31,83 @@ header p {
     color: var(--light);
 }
 
-main {
+.row {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content:center;
+    flex-flow: row wrap ;
+    justify-content: center;
 }
 
-section {
-    flex: 0 0 375px;
-    margin: 30px;
-    border-width: 2px;
-    border-style: dashed;
+.card-header {
+    border: 3px solid;
     border-color: var(--light);
-    
-}
-  
-.card {
-    padding: 0 10px 10px 10px;
-    transition: all 0.5s ease-in-out;
-}
-  
-.card h2 {
-    border-style: solid;
-    border-radius: 8px;
-    transition: all 0.5s ease-in-out;
-    border-color: var(--light);
+    background-color: var(--background);
     color: var(--headtext);
-    position: relative;
     text-align: center;
     margin-top: -20px;
 }
 
-.card > p {
+.code-card {
+    flex: 1 0 300px;
+    margin: 30px;
+    padding: 0 10px;
+    text-align: left;
+    border: 2px dashed;
+    border-color: var(--light); 
+}
+
+.code-card > p {
     color: var(--headtext);
     text-align: left;
 }
 
+.code-card .card-header {
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+}
+
+.code-card:hover,
+.code-card:hover .card-header {
+    box-shadow: inset 0px 0px 8px
+    rgba(102, 171, 236, 1), 0 0 15px
+    rgba(102, 171, 236, 1);
+}
+
+
 pre {
+    position:;
     font-size: .8em;
     color: var(--light);
     border-radius: 8px;
     background-image: var(--linear-gradient);
-    align-content: space-around;
     font-family: monospace;
 }
-
-.card:hover,
-.card:hover .card-header {
-    box-shadow: inset 0px 0px 8px
-rgba(232, 102, 236, 1), 0 0 15px
-rgba(232, 102, 235, 1);
+/*Solution:https://www.w3schools.com/cssref/css3_pr_user-select.asp#gsc.tab=0*/
+.all {
+    -webkit-user-select: all; /* Safari */
+    -ms-user-select: all; /* IE 10 and IE 11 */
+    user-select: all; /* Standard syntax */
 }
-
 footer {
+    color: var(--headtext);
     text-align: center;
 }
 
-/* Changes the width of the cards so they split into two columns at 992px or smaller*/
+/* Changes the width of the cards so they split into one columns at 768px or smaller*/
 /* Credit: https://www.w3schools.com/css/css3_mediaqueries_ex.asp*/
-@media screen and (max-width: 992px) {
-    .card {
-      width: 50%;
-    }
-}
-  /* Changes the width of the cards so they are stacked on top of each other at 768px or smaller */
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
     .card {
       width: 100%;
     }
 }
-  
+/* Changes the width of the cards so they split into one columns at 768px or larger*/
+@media screen and (max-width: 768px) {
+    .card {
+      width: 50%;
+    }
+}
+  /* Changes the width of the cards so they are stacked on top of each other at 992px or larger */
+@media screen and (max-width: 992px) {
+    .card {
+      width: 100%;
+    }
+}
